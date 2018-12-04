@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+const main = require('../dist/index').main;
+const logger = require('../dist/logger');
+
+(async function () {
+    try {
+        await main();
+    }
+    catch (error) {
+        logger.default.error(`Uncatched error: ${error.message}`);
+        process.exit(-1);
+    }
+})();

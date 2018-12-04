@@ -1,9 +1,11 @@
 {
-    "name": "git-zip-filter",
+    "name": "git-xd-filter",
     "version": "1.0.0",
-    "description": "A git filter that replaces a zip file with its content, so you can do easy merge/conflict handling",
+    "description": "A git filter that safes adobe xd files in a git digestable way",
     "main": "dist/index.js",
     "scripts": {
+        "build": "tsc",
+        "lint": "tslint -p tsconfig.json",
         "start": "ts-node src/index.ts",
         "test": "jest --bail --no-cache --runInBand"
     },
