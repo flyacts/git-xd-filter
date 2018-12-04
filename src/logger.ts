@@ -9,6 +9,9 @@ import * as nodeEmoji from 'node-emoji';
 import * as util from 'util';
 import * as winston from 'winston';
 
+/**
+ * Format the log files
+ */
 function format(options: TransformableInfo) {
     let meta;
     const _now = moment().toISOString();

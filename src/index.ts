@@ -8,6 +8,9 @@ import { clean } from './clean';
 import logger from './logger';
 import { smudge } from './smudge';
 
+/**
+ * Main entry point
+ */
 export async function main() {
     logger.debug('starting filter');
     const argv = minimist(process.argv.slice(2));

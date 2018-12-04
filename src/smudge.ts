@@ -48,7 +48,9 @@ export async function smudge() {
             try {
                 plainContent = JSON.parse(plainContent);
                 plainContent = JSON.stringify(plainContent);
-            } catch (error) {}
+            } catch (error) {
+                // just safe the content without modifications
+            }
             archive.append(plainContent, {
                 name: file.name,
                 store: storeFiles.includes(file.name),
