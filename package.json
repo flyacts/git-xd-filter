@@ -1,0 +1,47 @@
+{
+    "name": "git-zip-filter",
+    "version": "1.0.0",
+    "description": "A git filter that replaces a zip file with its content, so you can do easy merge/conflict handling",
+    "main": "dist/index.js",
+    "scripts": {
+        "start": "ts-node src/index.ts",
+        "test": "jest --bail --no-cache --runInBand"
+    },
+    "keywords": [
+        "git",
+        "filter",
+        "zip"
+    ],
+    "author": "FLYACTS GmbH",
+    "license": "MIT",
+    "devDependencies": {
+        "@flyacts/tslint-config": "1.1.1",
+        "@types/archiver": "^2.1.2",
+        "@types/chalk": "2.2.0",
+        "@types/file-type": "^5.2.2",
+        "@types/get-stdin": "^5.0.1",
+        "@types/jest": "23.3.10",
+        "@types/node-emoji": "1.8.0",
+        "chai": "4.2.0",
+        "jest": "23.6.0",
+        "nexe": "2.0.0-rc.34",
+        "ts-node": "^7.0.1",
+        "tslint": "5.11.0",
+        "tslint-language-service": "0.9.9",
+        "typescript": "3.2.1"
+    },
+    "dependencies": {
+        "@types/jszip": "3.1.4",
+        "@types/minimist": "1.2.0",
+        "archiver": "^3.0.0",
+        "chalk": "2.4.1",
+        "file-type": "^10.6.0",
+        "get-stdin": "^6.0.0",
+        "isbinaryfile": "^3.0.3",
+        "jszip": "3.1.5",
+        "minimist": "1.2.0",
+        "moment": "2.22.2",
+        "node-emoji": "1.8.1",
+        "winston": "3.1.0"
+    }
+}
