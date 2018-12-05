@@ -7,7 +7,7 @@ stages:
 
 before_script:
   - echo $NPMJS_AUTH_TOKEN > .npmrc
-  - npm ci
+  - npm ci --unsafe-perm
 
 Check Sourcecode:
   stage: lint
