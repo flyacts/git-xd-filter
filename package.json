@@ -1,6 +1,6 @@
 {
     "name": "git-xd-filter",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "description": "A git filter to store adobe xd files in a diffable way",
     "main": "dist/index.js",
     "scripts": {
