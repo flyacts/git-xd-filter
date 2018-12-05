@@ -10,7 +10,7 @@ import logger from './logger';
 interface GitFile {
     isBinary: boolean;
     name: string;
-    content: string;
+    content: any;
 }
 
 const storeFiles = [
@@ -46,8 +46,9 @@ export async function smudge() {
         } else {
             let plainContent = file.content;
             try {
-                plainContent = JSON.parse(plainContent);
-                plainContent = JSON.stringify(plainContent);
+                if (typeof plainContent === 'object') {
+                    plainContent = JSON.stringify(plainContent);
+                }
             } catch (error) {
                 // just safe the content without modifications
             }

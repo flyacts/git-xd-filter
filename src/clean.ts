@@ -48,8 +48,7 @@ export async function clean() {
         if (!isBinary) {
             let textContent = content.toString();
             try {
-                const json = JSON.parse(textContent);
-                textContent = JSON.stringify(json, undefined, 4);
+                textContent = JSON.parse(textContent);
             } catch (error) {
                 // failed to parse json
             }
