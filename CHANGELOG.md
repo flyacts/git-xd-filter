@@ -1,3 +1,9 @@
+#### 1.1.2 (2018-12-05)
+
+##### Continuous Integration
+
+*  set unsafe-perm to true (f08f832b)
+
 #### 1.1.1 (2018-12-05)
 
 ##### Bug Fixes
