@@ -1,13 +1,17 @@
 {
     "name": "git-xd-filter",
     "version": "1.0.5",
-    "description": "A git filter that safes adobe xd files in a git digestable way",
+    "description": "A git filter to store adobe xd files in a diffable way",
     "main": "dist/index.js",
     "scripts": {
         "build": "tsc",
         "lint": "tslint -p tsconfig.json",
         "start": "ts-node src/index.ts",
-        "test": "jest --bail --no-cache --runInBand"
+        "test": "./test.sh",
+        "prepush": "npm run lint && npm run build && npm run test",
+        "release:major": "npm run prepush && changelog -M && git add CHANGELOG.md && git commit --no-verify -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
+        "release:minor": "npm run prepush && changelog -m && git add CHANGELOG.md && git commit --no-verify -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
+        "release:patch": "npm run prepush && changelog -p && git add CHANGELOG.md && git commit --no-verify -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
     },
     "keywords": [
         "git",
@@ -19,30 +23,37 @@
     "bin": {
         "git-xd-filter": "./bin/git-xd-filter"
     },
+    "husky": {
+        "hooks": {
+            "pre-push": "npm run prepush",
+            "pre-commit": "npm run lint",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
     "devDependencies": {
+        "@commitlint/cli": "7.2.1",
+        "@commitlint/config-conventional": "7.1.2",
         "@flyacts/tslint-config": "1.1.1",
-        "@types/archiver": "^2.1.2",
+        "@types/archiver": "2.1.2",
         "@types/chalk": "2.2.0",
-        "@types/file-type": "^5.2.2",
-        "@types/get-stdin": "^5.0.1",
-        "@types/jest": "23.3.10",
+        "@types/file-type": "5.2.2",
+        "@types/get-stdin": "5.0.1",
+        "@types/jszip": "3.1.4",
+        "@types/minimist": "1.2.0",
         "@types/node-emoji": "1.8.0",
-        "chai": "4.2.0",
-        "jest": "23.6.0",
-        "nexe": "2.0.0-rc.34",
-        "ts-node": "^7.0.1",
+        "generate-changelog": "1.7.1",
+        "husky": "1.2.0",
+        "ts-node": "7.0.1",
         "tslint": "5.11.0",
         "tslint-language-service": "0.9.9",
         "typescript": "3.2.1"
     },
     "dependencies": {
-        "@types/jszip": "3.1.4",
-        "@types/minimist": "1.2.0",
-        "archiver": "^3.0.0",
+        "archiver": "3.0.0",
         "chalk": "2.4.1",
-        "file-type": "^10.6.0",
-        "get-stdin": "^6.0.0",
-        "isbinaryfile": "^3.0.3",
+        "file-type": "10.6.0",
+        "get-stdin": "6.0.0",
+        "isbinaryfile": "3.0.3",
         "jszip": "3.1.5",
         "minimist": "1.2.0",
         "moment": "2.22.2",

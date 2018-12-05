@@ -10,6 +10,7 @@ import logger from './logger';
 interface GitFile {
     isBinary: boolean;
     name: string;
+    // tslint:disable-next-line:no-any
     content: any;
 }
 

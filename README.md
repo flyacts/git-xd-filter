@@ -1,7 +1,6 @@
 # git-xd-filter
 
-A Git filter for Adobe xd files. This filter stores xd files which are actualy
-zip files in a git digestable way.
+A git filter to store adobe xd files in a diffable way.
 
 ## Install
 
