@@ -68,5 +68,5 @@ export async function clean() {
         }
     }
 
-    process.stdout.write(JSON.stringify(files));
+    process.stdout.write(JSON.stringify(files, undefined, 4));
 }
