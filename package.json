@@ -18,8 +18,11 @@
     "keywords": [
         "git",
         "filter",
-        "zip"
+        "xd"
     ],
+    "config": {
+        "unsafe-perm":true
+    },
     "author": "FLYACTS GmbH",
     "license": "MIT",
     "bin": {
