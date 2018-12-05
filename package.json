@@ -16,6 +16,9 @@
     ],
     "author": "FLYACTS GmbH",
     "license": "MIT",
+    "bin": {
+        "git-xd-filter": "./bin/git-xd-filter"
+    },
     "devDependencies": {
         "@flyacts/tslint-config": "1.1.1",
         "@types/archiver": "^2.1.2",
